@@ -1,0 +1,20 @@
+@model Course
+
+@if(Model.isActive==true)
+{
+<div class="col-md-4" id="kurs_@Model.Id">
+    <div class="card">
+        <img src="~/img/@Model.Image" class="card-img-top" alt="...">
+        <div class="card-body">
+            <a asp-controller="course" asp-action="details" asp-route-id="@Model.Id">
+                <h5 class="card-title">@Model.Title</h5>
+            </a>
+            <p class="card-text">@Model.Description</p>
+            @foreach(var etiket in Model.Tags)
+            {
+            <span class="badge bg-primary">@etiket</span>
+            }
+        </div>
+    </div>
+</div>
+}

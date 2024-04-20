@@ -1,0 +1,19 @@
+@section Styles{
+<link href="~/css/ozel.css" rel="stylesheet" />}
+@model List<Course>
+
+    <div class="row">
+        @foreach(var kurs in Model)
+        {
+        <!--<div class="col-md-4" id="kurs_@kurs.Id">
+            <div class="card">
+                <img src="~/img/@kurs.Image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@kurs.Title</h5>
+                    <p class="card-text">@kurs.Description</p>
+                </div>
+            </div>
+        </div>-->
+        <partial name="~/Views/Course/Shared/Partials/_CardPartial.cshtml" model="kurs" />
+        }
+    </div>
